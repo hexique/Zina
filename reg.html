@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <link rel="icon" type="image/x-icon" href="img/logo.png">
+   <title>Zina — Регистрация</title>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h3><img src="img/logo.png" height="25"> Zina</h3>
+            <!-- <h3>Zina</h3>-->
+            <a href="index.html">Войти</a>
+            <a href="dating.html">Знакомства</a>
+            <a href="about.html">О проекте</a>
+            <a href="contacts.html">Связаться с нами</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="left-aligned">
+            <div class="form">
+                <h1>Регистрация</h1>
+                <p>ФИО</p>
+                <input id="username" type="text" placeholder="Кузнецов Иван Александрович"><br><br>
+
+                <p>Ваш e-mail</p>
+                <input id="email" type="text" placeholder="Ivan19@mail.ru"><br><br>
+
+                <p>Пароль</p>
+                <input id="password" type="password" placeholder="dQw4w9WgXcQ"><br><br>
+
+                <p>Обо мне <a class="gray">(Необязательно)</a></p>
+                <textarea id="about" placeholder="Я люблю читать книги 🤗"></textarea><br><br>
+
+                <p>Дата рождения</p>
+                <input id="age" type="date"><br><br>
+
+                <p>Город</p>
+                <input id="city" type="text" placeholder="Москва"><br><br>
+
+                <p>Пол</p>
+                <select id="gender">
+                    <option value="Мужчина">Мужской</option>
+                    <option value="Женщина">Женский</option>
+                </select>
+
+                <p>Фотография</p>
+                <input id="photo" type="file" accept="image/png, image/jpeg" multiple><br><br>
+
+                <img src="img/captcha.gif"><br>
+                <input id="captcha" type="text" placeholder="Впишите число цифрами"><br><br>
+
+                <button onclick="submit()" type="submit">Зарегистрироваться</button>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <strong>Zina</strong><br>
+            <p>
+                <a href="login.html">Войти</a>
+                <a href="dating.html">Знакомства</a>
+                <a href="about.html">О проекте</a>
+                <a href="contacts.html">Связаться с нами</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="reg.js"></script>
+</body>
+</html>
