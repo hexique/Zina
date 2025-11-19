@@ -18,7 +18,7 @@ function calculateAge(date){
     console.log(currentDate)
     // Sun Nov 16 2025 16:07:20 GMT+0300 (Москва, стандартное время)
 
-    let result = currentDate.getFullYear() - parseInt(date.split("-")[0])
+    let result = currentDate.getFullYear() - parseInt(date.split("-")[0]) + 1
 
     if(parseInt(date.split("-")[0]) < months.indexOf(currentDate.getMonth())) {
         result -= 1
@@ -43,4 +43,9 @@ function loadPhoto() {
             document.getElementById("image").src = photoData;
         }
     }
+}
+
+function goTo(path) {
+
+    window.location.href = path;
 }

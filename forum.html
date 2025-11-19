@@ -5,14 +5,14 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="style.css">
    <link rel="icon" type="image/x-icon" href="img/logo.png">
-   <title>Zina — Главная страница</title>
+   <title>Zina — Знакомства</title>
 </head>
 <body>
     <div class="header">
         <div class="container">
             <h3><img src="img/logo.png" height="25"> Zina</h3>
-            <!-- <h3>Zina</h3>-->
-            <a href="reg.html">Регистрация</a>
+            <a href="index.html">Главная</a>
+            <a href="profile.html">Профиль</a>
             <a href="dating.html">Знакомства</a>
             <a href="forum.html">Форум</a>
             <a href="donations.html">Пожертвования</a>
@@ -23,12 +23,17 @@
 
     <div class="main-content">
         <div class="container">
-            
-            <h1>Добро пожаловать на Zina</h1>
-            <p id="about"></p><br>
-            <h1>Новые пользователи на сайте</h1>
-            <div id="persons">
-
+            <div class="form">
+                <strong>Здесь вы можете написать сценарий для поддельной переписки (сообщения разделяйте переносом строки)</strong><br><br>
+                <p>Имя собеседника</p>
+                <input id="username" type="text" placeholder="Георгий">
+                <p>Фото собеседника (число от 1 до 12)</p>
+                <input id="photo" type="text" placeholder="5">
+                <p>Сценарий переписки</p>
+                <textarea id="messages" placeholder="Напишите здесь сценарий. Например:
+Привет, ты мне понравился.
+А ты любишь читать книги?"></textarea><br>
+                <button onclick="save()">Сохранить</button>
             </div>
         </div>
     </div>
@@ -37,7 +42,8 @@
         <div class="container">
             <strong>Zina</strong><br>
             <p>
-                <a href="login.html">Войти</a>
+                <a href="index.html">Главная</a>
+                <a href="profile.html">Профиль</a>
                 <a href="dating.html">Знакомства</a>
                 <a href="forum.html">Форум</a>
                 <a href="donations.html">Пожертвования</a>
@@ -47,6 +53,6 @@
         </div>
     </footer>
 
-    <script src="index.js"></script>
+    <script src="forum.js"></script>
 </body>
 </html>
