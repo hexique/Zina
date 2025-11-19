@@ -4,15 +4,15 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="dm.css">
    <link rel="icon" type="image/x-icon" href="img/logo.png">
-   <title>Zina — Главная страница</title>
+   <title>Zina - Личные сообщения</title>
 </head>
 <body>
     <div class="header">
         <div class="container">
-            <h3><img src="img/logo.png" height="25"> Zina</h3>
-            <!-- <h3>Zina</h3>-->
-            <a href="reg.html">Регистрация</a>
+            <h3><img src="img/logo.png" height="25" alt="Логотип"> Zina</h3>
+            <a href="profile.html">Профиль</a>
             <a href="dating.html">Знакомства</a>
             <a href="forum.html">Форум</a>
             <a href="donations.html">Пожертвования</a>
@@ -22,22 +22,26 @@
     </div>
 
     <div class="main-content">
-        <div class="container">
-            
-            <h1>Добро пожаловать на Zina</h1>
-            <p id="about"></p><br>
-            <h1>Новые пользователи на сайте</h1>
-            <div id="persons">
+        <div class="dm-container">
+            <h1>Личные сообщения</h1>
+            <div class="messages-container" id="messages-container">
 
             </div>
         </div>
+    </div>
+
+    <div id="bottom-widjets">
+        <button><img src="img/dms/paperclip.png" alt="Прикрепить"></button>
+        <button><img src="img/dms/microphone.png" alt="Микрофон"></button>
+        <input type="text" id="msg" placeholder="Введите своё сообщение здесь.">
+        <button class="send-btn" onclick="send()">Отправить</button>
     </div>
 
     <footer>
         <div class="container">
             <strong>Zina</strong><br>
             <p>
-                <a href="login.html">Войти</a>
+                <a href="index.html">Войти</a>
                 <a href="dating.html">Знакомства</a>
                 <a href="forum.html">Форум</a>
                 <a href="donations.html">Пожертвования</a>
@@ -47,6 +51,6 @@
         </div>
     </footer>
 
-    <script src="index.js"></script>
+    <script src="dm.js"></script>
 </body>
 </html>

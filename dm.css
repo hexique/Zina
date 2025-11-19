@@ -1,0 +1,251 @@
+/* Стили для страницы личных сообщений */
+.dm-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: calc(100vh - 160px);
+}
+
+.messages-container {
+    margin-bottom: 70px;
+    padding: 20px;
+    min-height: calc(100vh - 250px);
+    background: linear-gradient(to bottom, #f9f9f9, #f0f0f0);
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+
+/* Стили для сообщений с аватарками */
+.msg-right, .msg-left {
+    margin: 15px 0;
+    padding: 8px 0;
+    position: relative;
+    word-wrap: break-word;
+    width: fit-content;
+    min-width: 120px;
+    max-width: 70%;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.msg-right {
+    margin-left: auto;
+    margin-right: 20px;
+    flex-direction: row-reverse;
+}
+
+.msg-left {
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+/* Контейнер для аватарки */
+.msg-avatar {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #3366cc;
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+}
+
+.msg-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Контейнер для содержимого сообщения */
+.msg-content {
+    padding: 12px 18px;
+    border-radius: 18px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    max-width: 500px;
+    word-wrap: break-word;
+}
+
+.msg-right .msg-content {
+    background: linear-gradient(to bottom, #3366cc, #2244aa);
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.msg-left .msg-content {
+    background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+    color: #333333;
+    border: 1px solid #dddddd;
+    border-bottom-left-radius: 5px;
+}
+
+.msg-content strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.msg-right .msg-content strong {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.msg-left .msg-content strong {
+    color: #3366cc;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+}
+
+.msg-content p {
+    margin: 0;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+/* Стили для виджетов ввода */
+#bottom-widjets {
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #f8f8f8, #e8e8e8);
+    border-top: 2px solid #3366cc;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+#bottom-widjets input {
+    flex: 1;
+    padding: 12px 18px;
+    border: 2px solid #3366cc;
+    border-radius: 25px;
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+    font-size: 14px;
+    outline: none;
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    min-height: 20px;
+    width: 800px;
+}
+
+#bottom-widjets input:focus {
+    border-color: #ff9900;
+    box-shadow: 0 0 8px rgba(255, 153, 0, 0.5);
+}
+
+#bottom-widjets button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bottom-widjets button:first-child,
+#bottom-widjets button:nth-child(2) {
+    background: linear-gradient(to bottom, #f8f8f8, #e8e8e8);
+    border: 1px solid #cccccc;
+    width: 44px;
+    min-width: 44px;
+}
+
+#bottom-widjets button:first-child:hover,
+#bottom-widjets button:nth-child(2):hover {
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+    transform: translateY(-1px);
+}
+
+#bottom-widjets button:last-child {
+    background: linear-gradient(to bottom, #3366cc, #2244aa);
+    color: white;
+    padding: 10px 25px;
+    border: 1px solid #1a3366;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    min-width: 100px;
+}
+
+#bottom-widjets button:last-child:hover {
+    background: linear-gradient(to bottom, #4488ee, #3366cc);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+#bottom-widjets img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0.7);
+}
+
+/* Дополнительные стили для заголовка */
+.dm-container h1 {
+    color: #3366cc;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    font-size: 28px;
+    border-bottom: 2px solid #ff9900;
+    padding-bottom: 10px;
+    background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+    padding: 15px 20px;
+    margin: 0;
+    border-bottom: 2px solid #3366cc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Стили для скроллбара */
+.messages-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #3366cc, #2244aa);
+    border-radius: 4px;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #4488ee, #3366cc);
+}
+
+@media (max-width: 768px) {
+    .msg-right, .msg-left {
+        max-width: 85%;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    
+    .msg-avatar {
+        width: 35px;
+        height: 35px;
+    }
+    
+    #bottom-widjets {
+        padding: 10px 15px;
+    }
+    
+    #bottom-widjets button:last-child {
+        min-width: 80px;
+        padding: 10px 15px;
+    }
+    
+    .msg-content {
+        padding: 10px 15px;
+    }
+}

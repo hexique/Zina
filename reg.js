@@ -1,12 +1,16 @@
 const keys = ["username", "email", "password", "about", "age", "city", "gender"]
 
+for(let i = 0; i < keys.length; i++){
+    try {
+        document.getElementById(keys[i]).value = localStorage.getItem(keys[i])
+    } catch {
+        0
+    }
+}
+
 async function submit(){
     for(let i = 0; i < keys.length; i++){
-        try {
-            document.getElementById(keys[i]).value = localStorage.getItem(keys[i])
-        } catch {
-            0
-        }
+
         localStorage.setItem(keys[i], document.getElementById([keys[i]]).value);
         console.log(`${keys[i]} : ${document.getElementById([keys[i]]).value}`)
     }
