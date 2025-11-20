@@ -4,8 +4,10 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="dating.css">
+
    <link rel="icon" type="image/x-icon" href="img/logo.png">
-   <title>Zina — Профиль</title>
+   <title>Zina — Знакомства</title>
 </head>
 <body>
     <div class="header">
@@ -22,7 +24,11 @@
     </div>
 
     <div class="main-content">
-        <div class="container" id="people">
+        <div class="container" id="people"></div>
+        <div id="buttons" style="text-align: center;">
+            <button onclick="goToPage(-1)">&lt;</button>
+            <label id="current-page">1</label>
+            <button onclick="goToPage(1)">></button>
             
         </div>
     </div>
@@ -41,6 +47,7 @@
         </div>
     </footer>
 
-    <script src="profile.js"></script>
+    <script src="people.js"></script>
+    <script src="dating.js"></script>
 </body>
 </html>
