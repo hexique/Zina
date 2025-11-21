@@ -46,7 +46,7 @@ for(let i = 0; i < people.length; i++){
                 <p>${people[i]["about"]}</p>
             </div>
             <div class="person-actions">
-                <button onclick="goTo(${people[i]["id"]})">Перейти в профиль</button> 
+                <a href="profile.html?id=${people[i]["id"]}"><button>Перейти в профиль</button></a>
                 <button>Связаться</button>
             </div>
         </div>
