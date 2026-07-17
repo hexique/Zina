@@ -12,7 +12,7 @@
         <div class="container">
             <h3><img src="img/logo.png" height="25"> Zina</h3>
             <!-- <h3>Zina</h3>-->
-            <a href="profile.html">Войти</a>
+            <a href="profile.html" id="profile">Войти</a>
             <a href="dating.html">Знакомства</a>
             <a href="forum.html">Форум</a>
             <a href="donations.html">Пожертвования</a>
@@ -25,11 +25,12 @@
         <div class="left-aligned">
             <div class="form">
                 <h1>Регистрация</h1>
-                <button class="white-btn"><img src="img/logos/gosuslugi.png" height="16" width="16"></button>
-                <button class="white-btn"><img src="img/logos/vk.svg" height="16" width="16"></button>
-                <button class="white-btn"><img src="img/logos/ok.png" height="16" width="16"></button>
+                <button class="white-btn" title="Войти с помощью почты"><img src="img/logos/vk.svg" height="16" width="16"></button>
+                <button class="white-btn" title="Войти через Госуслуги"><img src="img/logos/gosuslugi.png" height="16" width="16"></button>
+                <button class="white-btn" title="Войти через ВКонтакте"><img src="img/logos/vk.svg" height="16" width="16"></button>
+                <button class="white-btn" title="Войти через Одноклассники"><img src="img/logos/ok.png" height="16" width="16"></button>
                 <p>ФИО</p>
-                <input id="username" type="text" placeholder="Кузнецов Иван Александрович"><br><br>
+                <input id="name" type="text" placeholder="Кузнецов Иван Александрович"><br><br>
 
                 <p>Ваш e-mail</p>
                 <input id="email" type="email" placeholder="Ivan19@mail.ru"><br><br>
@@ -44,11 +45,11 @@
                 <input id="age" type="date"><br><br>
 
                 <p>Город</p>
-                <input id="city" type="text" placeholder="Москва"><br><br>
+                <input id="city" type="text" placeholder="Москва" required><br><br>
 
                 <p>Пол</p>
-                <select id="gender">
-                    <option value="Мужчина">Мужской</option>
+                <select id="gender" required>
+                    <option value="Мужчина" selected>Мужской</option>
                     <option value="Женщина">Женский</option>
                 </select>
 
@@ -58,7 +59,11 @@
                 <img src="img/captcha.gif"><br>
                 <input id="captcha" type="text" placeholder="Впишите число цифрами"><br><br>
 
-                <input type="checkbox" id="eula-input"></input><label for="eula-input"> Я принимаю <a href="https://hexique.github.io/GDLS/random.html" class="black-href">пользовательское соглашение</a></label> <br>
+                <div id="eula">
+                    <input type="checkbox" id="eula-input"></input><label for="eula-input"> Я принимаю <a href="legal.html#tos" class="black-href">пользовательское соглашение</a> и 
+                        <a href="legal.html#privacy" class="black-href">политику конфиденциальности</a></label> 
+                </div>
+                <br>
 
                 <button onclick="submit()" type="submit">Зарегистрироваться</button>
 
@@ -70,7 +75,7 @@
         <div class="container">
             <strong>Zina</strong><br>
             <p>
-                <a href="index.html">Войти</a>
+                <a href="index.html" id="profile">Войти</a>
                 <a href="dating.html">Знакомства</a>
                 <a href="forum.html">Форум</a>
                 <a href="donations.html">Пожертвования</a>
@@ -80,6 +85,7 @@
         </div>
     </footer>
 
-    <script src="reg.js"></script>
+    <script src="scripts/reg.js"></script>
+    <script src="scripts/header.js"></script>
 </body>
 </html>

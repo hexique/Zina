@@ -1,4 +1,5 @@
-const keys = ["username", "email", "password", "about", "age", "city", "gender"]
+const keys = ["name", "email", "password", "about", "age", "city", "gender"]
+const legal_checkbox = document.querySelector("#eula-input")
 
 for(let i = 0; i < keys.length; i++){
     try {
@@ -9,6 +10,18 @@ for(let i = 0; i < keys.length; i++){
 }
 
 async function submit(){
+    if(!legal_checkbox.checked){
+        document.querySelector("#eula").outerHTML += 'нажми на галочку'
+        document.querySelector("#eula").animate([
+            { backgroundColor: 'transparent' },
+            { backgroundColor: '#f15315' },
+            { backgroundColor: 'transparent' }
+        ], {
+            duration: 1200
+        });
+        return
+    }
+
     for(let i = 0; i < keys.length; i++){
 
         localStorage.setItem(keys[i], document.getElementById([keys[i]]).value);
