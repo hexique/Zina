@@ -11,19 +11,11 @@ for(let i = 0; i < keys.length; i++){
 
 async function submit(){
     if(!legal_checkbox.checked){
-        document.querySelector("#eula").outerHTML += 'нажми на галочку'
-        document.querySelector("#eula").animate([
-            { backgroundColor: 'transparent' },
-            { backgroundColor: '#f15315' },
-            { backgroundColor: 'transparent' }
-        ], {
-            duration: 1200
-        });
+        document.querySelector("#eula-not-accepted").hidden = false
         return
     }
 
     for(let i = 0; i < keys.length; i++){
-
         localStorage.setItem(keys[i], document.getElementById([keys[i]]).value);
         console.log(`${keys[i]} : ${document.getElementById([keys[i]]).value}`)
     }
