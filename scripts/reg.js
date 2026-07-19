@@ -1,4 +1,5 @@
-const keys = ["username", "email", "password", "about", "age", "city", "gender"]
+const keys = ["name", "email", "password", "about", "age", "city", "gender"]
+const legal_checkbox = document.querySelector("#eula-input")
 
 for(let i = 0; i < keys.length; i++){
     try {
@@ -9,8 +10,12 @@ for(let i = 0; i < keys.length; i++){
 }
 
 async function submit(){
-    for(let i = 0; i < keys.length; i++){
+    if(!legal_checkbox.checked){
+        document.querySelector("#eula-not-accepted").hidden = false
+        return
+    }
 
+    for(let i = 0; i < keys.length; i++){
         localStorage.setItem(keys[i], document.getElementById([keys[i]]).value);
         console.log(`${keys[i]} : ${document.getElementById([keys[i]]).value}`)
     }

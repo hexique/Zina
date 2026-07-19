@@ -99,6 +99,10 @@ a {
     transition: all 0.3s ease;
 }
 
+ul {
+    margin-top: 8px
+}
+
 input[type="text"],
 input[type="email"],
 input[type="password"],

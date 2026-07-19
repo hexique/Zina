@@ -105,8 +105,8 @@
 
 /* Стили для виджетов ввода */
 #bottom-widjets {
-    position: fixed;
-    bottom: 60px;
+    position: relative;
+    bottom: 0;
     left: 0;
     right: 0;
     width: 100%;
