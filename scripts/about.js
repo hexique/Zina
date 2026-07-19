@@ -1,6 +1,7 @@
 function clearCookies(){
-    window.alert("u sure?")
-    localStorage.clear()
+    if (window.confirm("u sure?") == true){
+        localStorage.clear()
+    }
 }
 
 function deleteMessage(){
