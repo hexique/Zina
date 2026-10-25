@@ -1,6 +1,6 @@
 const account_buttons = document.querySelectorAll("#profile")
 if(account_buttons == null || account_buttons.length < 2){
-    document.querySelector("body").innerHTML = "<h1>#profile not found. plz fix</h1> (expecting atleast 2 buttons)"
+    document.body.innerHTML = "<h1>#profile not found. plz fix</h1> (expecting atleast 2 buttons)"
 }
 
 if(localStorage.getItem("name") !== null){

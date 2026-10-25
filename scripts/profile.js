@@ -9,13 +9,6 @@ if (about){
     about = about.replaceAll("\n", "<br>")
 }
 
-console.log(`username : ${localStorage.getItem("username")}`)
-document.getElementById("username").innerHTML = localStorage.getItem("username")
-
-console.log(`about : ${localStorage.getItem("about")}`)
-document.getElementById("about").textContent = about
-
-
 if(id){
     document.getElementById("buttons").innerHTML = `
         <button onclick=${hasProfile() ? "goTo('dm.html')" : "goTo('reg.html')"}>Написать</button>
@@ -33,6 +26,8 @@ function loadInfo() {
         document.getElementById("about").innerHTML = people[id]["about"]
     } else {
         document.getElementById("age-city-gender").innerHTML = `${calculateAge(localStorage.getItem("age"))} · ${localStorage.getItem("city")} · ${localStorage.getItem("gender")}`
+        document.getElementById("username").innerHTML = localStorage.getItem("name")
+        document.getElementById("about").textContent = about
     }
         
 }
