@@ -3,15 +3,15 @@ const months = [undefined, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 
-console.log(`username : ${localStorage.getItem("username")}`)
-document.getElementById("username").innerHTML = localStorage.getItem("username")
 
-console.log(`about : ${localStorage.getItem("about")}`)
-document.getElementById("about").textContent = localStorage.getItem("about").replaceAll("\n", "<br>")
+let about = localStorage.getItem("about");
+if (about){
+    about = about.replaceAll("\n", "<br>")
+}
 
 if(id){
     document.getElementById("buttons").innerHTML = `
-        <button onclick="goTo('dm.html')">Написать</button>
+        <button onclick=${hasProfile() ? "goTo('dm.html')" : "goTo('reg.html')"}>Написать</button>
         <button onclick="goTo('reg.html')">Сохранить в избранное</button>
 `
 }
@@ -26,6 +26,8 @@ function loadInfo() {
         document.getElementById("about").innerHTML = people[id]["about"]
     } else {
         document.getElementById("age-city-gender").innerHTML = `${calculateAge(localStorage.getItem("age"))} · ${localStorage.getItem("city")} · ${localStorage.getItem("gender")}`
+        document.getElementById("username").innerHTML = localStorage.getItem("name")
+        document.getElementById("about").textContent = about
     }
         
 }

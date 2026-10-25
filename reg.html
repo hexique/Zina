@@ -12,6 +12,7 @@
         <div class="container">
             <h3><img src="img/logo.png" height="25"> Zina</h3>
             <!-- <h3>Zina</h3>-->
+            <a href="index.html">Главная</a>
             <a href="profile.html" id="profile">Войти</a>
             <a href="dating.html">Знакомства</a>
             <a href="forum.html">Форум</a>
@@ -24,11 +25,13 @@
     <div class="main-content">
         <div class="left-aligned">
             <div class="form">
-                <h1>Регистрация</h1>
-                <button class="white-btn" title="Войти с помощью почты"><img src="img/logos/vk.svg" height="16" width="16"></button>
-                <button class="white-btn" title="Войти через Госуслуги"><img src="img/logos/gosuslugi.png" height="16" width="16"></button>
-                <button class="white-btn" title="Войти через ВКонтакте"><img src="img/logos/vk.svg" height="16" width="16"></button>
-                <button class="white-btn" title="Войти через Одноклассники"><img src="img/logos/ok.png" height="16" width="16"></button>
+                <h1 id="title">Регистрация</h1>
+                <div id="signup-buttons">
+                    <button class="white-btn" title="Войти с помощью почты"><img src="img/logos/vk.svg" height="16" width="16"></button>
+                    <button class="white-btn" title="Войти через Госуслуги"><img src="img/logos/gosuslugi.png" height="16" width="16"></button>
+                    <button class="white-btn" title="Войти через ВКонтакте"><img src="img/logos/vk.svg" height="16" width="16"></button>
+                    <button class="white-btn" title="Войти через Одноклассники"><img src="img/logos/ok.png" height="16" width="16"></button>
+                </div>
                 <p>ФИО</p>
                 <input id="name" type="text" placeholder="Кузнецов Иван Александрович"><br><br>
 
@@ -47,11 +50,13 @@
                 <p>Город</p>
                 <input id="city" type="text" placeholder="Москва" required><br><br>
 
-                <p>Пол</p>
-                <select id="gender" required>
-                    <option value="Мужчина" selected>Мужской</option>
-                    <option value="Женщина">Женский</option>
-                </select>
+                <div id="gender-div">
+                    <p>Пол</p>
+                    <select id="gender" required>
+                        <option value="Мужчина">Мужской</option>
+                        <option value="Женщина">Женский</option>
+                    </select>
+                </div>
 
                 <p>Фотография</p>
                 <input id="photo" type="file" accept="image/png, image/jpeg" multiple><br><br>
@@ -62,28 +67,17 @@
                 <div id="eula">
                     <input type="checkbox" id="eula-input"></input><label for="eula-input"> Я принимаю <a href="legal.html#tos" class="black-href">пользовательское соглашение</a> и 
                         <a href="legal.html#privacy" class="black-href">политику конфиденциальности</a></label> 
-                    <p id="eula-not-accepted" hidden class="red">нажми на галочку</p>
+                    <p id="eula-not-accepted" hidden class="red">Вы должны согласиться с пользовательским соглашением, чтобы продолжить</p>
                 </div>
                 <br>
 
-                <button onclick="submit()" type="submit">Зарегистрироваться</button>
+                <button onclick="submit()" type="submit" id="signup">Зарегистрироваться</button>
+                <button class="red-btn" onclick="deleteAccount()" id="delete-account" hidden>Удалить аккаунт</button>
             </div>
         </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <strong>Zina</strong><br>
-            <p>
-                <a href="index.html" id="profile">Войти</a>
-                <a href="dating.html">Знакомства</a>
-                <a href="forum.html">Форум</a>
-                <a href="donations.html">Пожертвования</a>
-                <a href="about.html">О проекте</a>
-                <a href="contacts.html">Связаться с нами</a>
-            </p>
-        </div>
-    </footer>
+    <script src="scripts/footer.js"></script>
 
     <script src="scripts/reg.js"></script>
     <script src="scripts/header.js"></script>

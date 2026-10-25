@@ -456,3 +456,12 @@ select.error-field {
   color: hsl(225, 60%, 50%);
   text-decoration-color: hsl(225, 60%, 50%);
 }
+
+.red-btn{
+    background: linear-gradient(to bottom, #cc3333, #aa2222);
+}
+.red-btn:hover{
+    background: linear-gradient(to bottom, #ee4444, #cc3333);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    transform: translateY(-1px);
+}

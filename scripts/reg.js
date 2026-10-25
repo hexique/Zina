@@ -9,8 +9,31 @@ for(let i = 0; i < keys.length; i++){
     }
 }
 
+if (hasProfile()){
+    document.getElementById("title").textContent = "Изменить данные странички"
+    document.getElementById("signup").textContent = "Сохранить"
+    document.getElementById("signup-buttons").hidden = true
+    document.getElementById("gender-div").hidden = true
+    document.getElementById("eula").hidden = true
+
+    
+    document.getElementById("delete-account").hidden = false
+}
+
+//indev
+function deleteAccount(){
+    if(!confirm("Вы уверены, что хотите удалить свой аккаунт? Это действие НЕВОЗМОЖНО отменить.")){
+        return
+    }
+
+    for(let i = 0; i < keys.length; i++){
+        localStorage.removeItem(keys[i]);
+        window.location = "/"
+    }
+}
+
 async function submit(){
-    if(!legal_checkbox.checked){
+    if(!hasProfile() && !legal_checkbox.checked){
         document.querySelector("#eula-not-accepted").hidden = false
         return
     }

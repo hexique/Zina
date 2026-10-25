@@ -1,3 +1,5 @@
+
+
 let people = [
     {
         "username": "Бакиева Анжелика",
