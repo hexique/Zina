@@ -17,5 +17,6 @@
 // Math.floor(Math.random() * 100)
 
 for(let i = 1; i < 12; i++){
-    document.getElementById("persons").innerHTML += `<a href="profile.html?id=${i}"><img src="img/persons/${i}.jpg" height="300"></a>`
+    let person = people[i]
+    document.getElementById("persons").innerHTML += `<a href="profile.html?id=${person.id}"><img src="img/persons/${person.photo}.jpg" height="300"></a>`
 }
