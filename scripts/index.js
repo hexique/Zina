@@ -13,6 +13,9 @@
 // </ul><br>\
 // Начните свою историю знакомств там, где ей рады. Начните на Zina."
 
+
+// Math.floor(Math.random() * 100)
+
 for(let i = 1; i < 12; i++){
-    document.getElementById("persons").innerHTML += `<img src="img/persons/${i}.jpg" height="300">`
+    document.getElementById("persons").innerHTML += `<a href="profile.html?id=${i}"><img src="img/persons/${i}.jpg" height="300"></a>`
 }

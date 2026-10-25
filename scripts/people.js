@@ -1,3 +1,7 @@
+function hasProfile(){
+    return localStorage.getItem("name") !== null
+}
+
 let people = [
     {
         "username": "Бакиева Анжелика",
