@@ -3,6 +3,7 @@ const months = [undefined, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 
+let dm_people = JSON.parse(localStorage.getItem("dm_people"))
 
 let about = localStorage.getItem("about");
 if (about){
@@ -11,9 +12,18 @@ if (about){
 
 if(id){
     document.getElementById("buttons").innerHTML = `
-        <button onclick=${hasProfile() ? "goTo('dm.html')" : "goTo('reg.html')"}>Написать</button>
+        <button onclick=${hasProfile() ? "registerDM()" : "goTo('reg.html')"}>${dm_people.includes(id) ? "Перейти в ЛС" : "Написать"}</button>
         <button onclick="goTo('reg.html')">Сохранить в избранное</button>
 `
+}
+
+function registerDM(){
+    if(!dm_people.includes(id)){
+        dm_people.push(id)
+        console.log(dm_people)
+        localStorage.setItem("dm_people", JSON.stringify(dm_people))
+    }
+    goTo("dm.html")
 }
 
 loadPhoto();

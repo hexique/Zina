@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="dm.css">
-   <link rel="icon" type="image/x-icon" href="img/logo.png">
-   <title>Zina - Личные сообщения</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dm.css">
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <title>Zina - Личные сообщения</title>
 </head>
+
 <body>
     <div class="header">
         <div class="container">
@@ -23,23 +25,34 @@
 
     <audio src="beep.ogg" id="notify-audio"></audio>
     <div class="main-content">
-        <div class="dm-container">
-            <h1>Личные сообщения</h1>
-            <div class="messages-container" id="messages-container">
+        <div id="dm-full" hidden>
+            <div class="dm-container">
+                <div class="dm-row">
+                    <button onclick="closedm()">Назад</button>
+                    <button class="red-btn" onclick="deletedm()">Удалить переписку</button>
+                </div>
+                <h3 id="dm-template">Человек</h3>
+                <h1>Личные сообщения</h1>
+                <div class="messages-container" id="messages-container">
 
+                </div>
+            </div>
+
+            <div id="bottom-widjets">
+                <!-- One might use this buttons, and one might see the foolery
+                <button><img src="img/dms/paperclip.png" alt="Прикрепить"></button>
+                <button><img src="img/dms/microphone.png" alt="Микрофон"></button> -->
+                <input type="text" id="msg" placeholder="Введите своё сообщение здесь.">
+                <button class="send-btn" onclick="send()">Отправить</button>
             </div>
         </div>
 
-        <div id="bottom-widjets">
-            <!-- One might use this buttons, and one might see the foolery
-            <button><img src="img/dms/paperclip.png" alt="Прикрепить"></button>
-            <button><img src="img/dms/microphone.png" alt="Микрофон"></button> -->
-            <input type="text" id="msg" placeholder="Введите своё сообщение здесь.">
-            <button class="send-btn" onclick="send()">Отправить</button>
+        <div id="dm-list">
+
         </div>
     </div>
 
-    
+
 
     <footer>
         <div class="container">
@@ -55,6 +68,8 @@
         </div>
     </footer>
 
+    <script src="scripts/people.js"></script>
     <script src="scripts/dm.js"></script>
 </body>
+
 </html>
