@@ -21,10 +21,11 @@
             <div class="dm-container">
                 <div class="dm-row">
                     <button onclick="closedm()">Назад</button>
-                    <button class="red-btn" onclick="deletedm()">Удалить переписку</button>
+                    <button class="red-btn" onclick="deletedm()">Скрыть переписку</button>
                 </div>
                 <h3 id="dm-template">Человек</h3>
                 <h1>Личные сообщения</h1>
+                
                 <div class="messages-container" id="messages-container">
 
                 </div>
@@ -35,12 +36,11 @@
                 <button><img src="img/dms/paperclip.png" alt="Прикрепить"></button>
                 <button><img src="img/dms/microphone.png" alt="Микрофон"></button> -->
                 <input type="text" id="msg" placeholder="Введите своё сообщение здесь.">
-                <button class="send-btn" onclick="send()">Отправить</button>
+                <button class="send-btn" onclick="send(inputbox.value)">Отправить</button>
             </div>
         </div>
 
         <div id="dm-list">
-
         </div>
     </div>
 

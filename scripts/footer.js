@@ -2,6 +2,10 @@ function hasProfile(){
     return localStorage.getItem("name") !== null
 }
 
+function redirect(url){
+    window.location.href = url
+}
+
 
 document.body.innerHTML += `<footer>
 <div class="container">

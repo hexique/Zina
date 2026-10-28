@@ -32,6 +32,7 @@ if(page){
     page = 1
 }
 
+document.getElementById("people").innerHTML = ""
 console.log(`legh = ${people.length}`)
 for(let i = 0; i < people.length; i++){
     document.getElementById("people").innerHTML += `

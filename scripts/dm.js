@@ -160,8 +160,32 @@ function _add_message(role, message){
 }
 
 function send(message){
-    _add_message(1, message)
+    if(message == ""){
+        return;
+    }
 
+    inputbox.value = ""
+    _add_message(1, message)
+    _push_to_history(message)
+    respond_message(last_person)
+}
+
+function respond_message(person){
+    let scenario = JSON.parse(localStorage.getItem("dm_scenarios"))
+    if(scenario[last_person].index > scenario[last_person].messages.length - 1){
+        return
+    }
+    const message = scenario[last_person].messages[scenario[last_person].index]
+    _add_message(0, message)
+    scenario[last_person].index++;
+
+    localStorage.setItem("dm_scenarios", JSON.stringify(scenario))
+    _push_to_history(message)
+
+    console.log(scenario)
+}
+
+function _push_to_history(message){
     if(dm_history[last_person] == null){
         dm_history[last_person] = [message]
     }
@@ -171,15 +195,6 @@ function send(message){
 
     console.log(dm_history)
     localStorage.setItem("dm_history", JSON.stringify(dm_history))
-
-    respond_message(last_person)
-}
-
-function respond_message(person){
-    const id = person.id
-    const scenario = JSON.parse(localStorage.getItem("dm_scenarios"))[id]
-
-    console.log(scenario)
 }
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -187,7 +202,6 @@ let goto_id = urlParams.get('g')
 
 const dm_view = document.querySelector("#dm-full")
 const dm_list = document.querySelector("#dm-list")
-
 
 const dm_scenarios = JSON.parse(localStorage.getItem("dm_scenarios"))
 const dm_view_template = document.querySelector("#dm-template")
@@ -202,7 +216,6 @@ if(dm_history == null){
 let last_person = null
 
 const profile_picture = JSON.parse(localStorage.getItem("photo"))['dataUrl']
-
 const inputbox = document.getElementById("msg")
 
 
@@ -214,7 +227,7 @@ if(!dm_view.hidden){
 inputbox.addEventListener("keydown", (event) => {
     if(event.code === "Enter") {
         send(inputbox.value);
-        inputbox.value = ""
+        
     }
 });
 
@@ -238,7 +251,13 @@ function opendm(id){
 
 function dm_setmessages(id){
     const history = dm_history[id]
-    const scenario = dm_scenarios[id]
+    let scenario = dm_scenarios[id]
+    if(scenario == null){
+        scenario = []
+    }
+    else{
+        scenario = scenario.messages
+    }
     
     _clear_messages()
     if(history == null){
@@ -286,10 +305,12 @@ function populatedm(){
     for(let i=0; i < dm_people_list.length; i++){
         console.log(dm_people_list[i])
         const person = people[parseInt(dm_people_list[i])];
+        const history = dm_history[dm_people_list[i]]
+
         dm_list.innerHTML += `<div class="person-dm-listing" onclick="opendm(this.id)" id="${person.id}">
                 <img src="img/persons/${person.photo}.jpg" width="60" height="60">
                 <a>${person.username}</a>
-                <span>1 новый сообщение!</span>
+                <p>${history != null ? history[history.length - 1] : ""}</p>
             </div>`
     }
 }

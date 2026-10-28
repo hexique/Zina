@@ -16,12 +16,13 @@
             <div class="form">
                 <h1 id="title">Регистрация</h1>
                 <div id="signup-buttons">
-                    <button class="white-btn" title="Войти с помощью почты"><img src="https://www.svgrepo.com/show/521128/email-1.svg" height="16" width="16"></button>
-                    <button class="white-btn" title="Войти через ВКонтакте"><img src="img/logos/vk.svg" height="16" width="16"></button>
-                    <button class="white-btn" title="Войти через Госуслуги"><img src="img/logos/gosuslugi.png" height="16" width="16"></button>
-                    <button class="white-btn" title="Войти через Яндекс"><img src="img/logos/yandex.png" height="16" width="16"></button>
-                    <button class="white-btn" title="Войти через Одноклассники"><img src="img/logos/ok.png" height="16" width="16"></button>
-                </div>
+                    <p>Уже есть аккаунт? Войдите с помощью одного из ниже предоставленных способов</p>
+                    <button onclick="redirect('login.html?href=email')" class="white-btn" title="Войти с помощью почты"><img src="https://www.svgrepo.com/show/521128/email-1.svg" height="16" width="16"></button>
+                    <button onclick="redirect('login.html?href=vk')" class="white-btn" title="Войти через ВКонтакте"><img src="img/logos/vk.svg" height="16" width="16"></button>
+                    <button onclick="redirect('login.html?href=gosuslugi')" class="white-btn" title="Войти через Госуслуги"><img src="img/logos/gosuslugi.png" height="16" width="16"></button>
+                    <button onclick="redirect('login.html?href=yandex')" class="white-btn" title="Войти через Яндекс"><img src="img/logos/yandex.png" height="16" width="16"></button>
+                    <button onclick="redirect('login.html?href=ok')" class="white-btn" title="Войти через Одноклассники"><img src="img/logos/ok.png" height="16" width="16"></button>
+                </div><br>
                 <p>ФИО</p>
                 <input id="name" type="text" placeholder="Кузнецов Иван Александрович"><br><br>
 

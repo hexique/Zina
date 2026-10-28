@@ -20,7 +20,7 @@ if(id){
 function registerDM(){
     if(!dm_people.includes(id)){
         dm_people.push(id)
-        console.log(dm_people)
+        console.log("DM" + dm_people)
         localStorage.setItem("dm_people", JSON.stringify(dm_people))
     }
     goTo(`dm.html?g=${id}`)
