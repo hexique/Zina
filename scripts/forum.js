@@ -1,14 +1,23 @@
-function save() {
-    localStorage.setItem("username-script", document.getElementById("username").value);
-    localStorage.setItem("photo-script", document.getElementById("photo").value);
-    localStorage.setItem("messages", document.getElementById("messages").value.split("\n").join("s-p-l-i-t-t-e-r"));
-    localStorage.setItem("is-first", document.getElementById("is-first")?.checked);
+let scenarios = JSON.parse(localStorage.getItem("dm_scenarios"))
 
-    console.log("saved")
+function load(){
+    let id = idbox.value
+    if(!id){
+        return
+    }
+
+    scbox.value = scenarios[id]
 }
 
-//load
-document.getElementById("username").value = localStorage.getItem("username-script");
-document.getElementById("photo").value = localStorage.getItem("photo-script")
-document.getElementById("messages").value = localStorage.getItem("messages").split("s-p-l-i-t-t-e-r").join("\n");
-document.getElementById("is-first").checked = localStorage.getItem("is-first");
+function save(){
+    if(!scenarios){
+        scenarios = new Object()
+    }
+    scenarios[idbox.value] = scbox.value.split("\n")
+
+    localStorage.setItem("dm_scenarios", JSON.stringify(scenarios))
+}
+
+const idbox = document.getElementById("id")
+const scbox = document.getElementById("scenario")
+const frbox = document.getElementById("is-first")

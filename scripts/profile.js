@@ -23,7 +23,7 @@ function registerDM(){
         console.log(dm_people)
         localStorage.setItem("dm_people", JSON.stringify(dm_people))
     }
-    goTo("dm.html")
+    goTo(`dm.html?g=${id}`)
 }
 
 loadPhoto();
