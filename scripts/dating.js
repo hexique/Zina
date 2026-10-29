@@ -11,6 +11,7 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 let page = parseInt(urlParams.get('page'));
+const dm_favorites = JSON.parse(localStorage.getItem("dm_favorites"))
 
 function shuffle(array) {
   let currentIndex = array.length;
@@ -25,7 +26,7 @@ function shuffle(array) {
   }
 }
 
-if(page){
+if(page > 1){
     shuffle(people)
     document.getElementById("current-page").textContent = page
 } else {
@@ -50,11 +51,14 @@ for(let i = 0; i < people.length; i++){
             </div>
             <div class="person-actions">
                 <a href="profile.html?id=${people[i]["id"]}"><button>Перейти в профиль</button></a>
-                <button>Связаться</button>
+                ${false ? "<button>Связаться</button>": ""}
+                ${dm_favorites.includes(people[i]['id'].toString()) && page == 1 ? "<span>В избранном</span>" : ""}
             </div>
         </div>
     </div><br>
-`}
+`
+    //Связаться бесмысленно имхо зачем оно надо
+}
 
 function goToPage(pageId){
     window.location.href = `dating.html?page=${page + pageId}`

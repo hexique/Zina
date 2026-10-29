@@ -4,17 +4,35 @@ const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 
 let dm_people = JSON.parse(localStorage.getItem("dm_people"))
+let dm_favorites = JSON.parse(localStorage.getItem("dm_favorites")) 
+if(dm_favorites == null){
+    dm_favorites = new Array()
+}
 
 let about = localStorage.getItem("about");
 if (about){
     about = about.replaceAll("\n", "<br>")
 }
 
-if(id){
+function toggleFavorite(){
+    if(dm_favorites.includes(id)){
+        dm_favorites.splice(dm_favorites.indexOf(id), 1)
+    }
+    else{
+        dm_favorites.push(id)
+    }
+    localStorage.setItem("dm_favorites", JSON.stringify(dm_favorites))
+    _updateButtons()
+}
+
+function _updateButtons(){
     document.getElementById("buttons").innerHTML = `
         <button onclick=${hasProfile() ? "registerDM()" : "redirect('reg.html')"}>${dm_people.includes(id) ? "Перейти в ЛС" : "Написать"}</button>
-        <button onclick="redirect('reg.html')">Сохранить в избранное</button>
-`
+        <button onclick="toggleFavorite()">${dm_favorites.includes(id) ? "Удалить из избранного" : "Сохранить в избранное"}</button>`
+}
+
+if(id){
+    _updateButtons()
 }
 
 function registerDM(){
