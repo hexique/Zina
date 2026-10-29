@@ -130,6 +130,9 @@
 // //     }
 // // }
 
+const MAX_ANSWER_DELAY = 6000 //in milliseconds
+const MIN_ANSWER_DELAY = 2000 //in milliseconds
+
 function _clear_messages(){
     console.log("cleariing...")
     document.getElementById("messages-container").innerHTML = ""
@@ -167,7 +170,10 @@ function send(message){
     inputbox.value = ""
     _add_message(1, message)
     _push_to_history(message)
-    respond_message(last_person)
+
+    setTimeout(() => {
+        respond_message(last_person)
+    }, Math.random() * MAX_ANSWER_DELAY + MIN_ANSWER_DELAY)
 }
 
 function respond_message(person){
