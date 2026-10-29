@@ -11,6 +11,10 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 let page = parseInt(urlParams.get('page'));
+let dm_favorites = JSON.parse(localStorage.getItem("dm_favorites"))
+if(dm_favorites == null){
+    dm_favorites = new Array()
+}
 
 function shuffle(array) {
   let currentIndex = array.length;
@@ -25,13 +29,16 @@ function shuffle(array) {
   }
 }
 
-if(page){
+if(page > 1){
     shuffle(people)
     document.getElementById("current-page").textContent = page
 } else {
     page = 1
 }
 
+//DO NOT CHANGE (make an illusion that this site has more people than it actually has)
+
+document.getElementById("people").innerHTML = ""
 console.log(`legh = ${people.length}`)
 for(let i = 0; i < people.length; i++){
     document.getElementById("people").innerHTML += `
@@ -47,14 +54,13 @@ for(let i = 0; i < people.length; i++){
             </div>
             <div class="person-actions">
                 <a href="profile.html?id=${people[i]["id"]}"><button>Перейти в профиль</button></a>
-                <button>Связаться</button>
+                ${false ? "<button>Связаться</button>": ""}
+                ${dm_favorites.includes(people[i]['id'].toString()) && page == 1 ? "<span>В избранном</span>" : ""}
             </div>
         </div>
     </div><br>
-`}
-
-function goTo(id){
-    window.location.href = `profile.html?id=${id}`
+`
+    //Связаться бесмысленно имхо зачем оно надо
 }
 
 function goToPage(pageId){

@@ -8,24 +8,29 @@
    <title>Zina — Форум</title>
 </head>
 <body>
+    <script>
+        if(localStorage.getItem("isDeveloper") != "true"){
+            window.location.href = "404.html"
+        }
+    </script>
     <div class="header">
-
+        
     </div>
 
     <div class="main-content">
         <div class="container">
             <div class="form">
                 <strong>Здесь вы можете написать сценарий для поддельной переписки (сообщения разделяйте переносом строки)</strong><br><br>
-                <p>Имя собеседника</p>
-                <input id="username" type="text" placeholder="Георгий">
-                <p>Фото собеседника (число от 1 до 105)</p>
-                <input id="photo" type="text" placeholder="5">
+                <p>ID собеседника [0-100]</p>
+                <input id="id" type="text" placeholder="0">
                 <p>Сценарий переписки</p>
-                <textarea id="messages" placeholder="Напишите здесь сценарий. Например:
+                <textarea id="scenario" placeholder="Напишите здесь сценарий. Например:
 Привет, ты мне понравился.
 А ты любишь читать книги?"></textarea><br>
                 <input type="checkbox" id="is-first" title="Собеседник напишет вам первым.">Первое сообщение</input><br>
                 <button onclick="save()">Сохранить</button>
+                <button onclick="load()">Загрузить сценарий</button>
+                <button class="red-btn" onclick="reset()">Обратить вспять сценарий</button>
             </div>
         </div>
     </div>

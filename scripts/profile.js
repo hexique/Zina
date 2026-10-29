@@ -3,17 +3,45 @@ const months = [undefined, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 
+let dm_people = JSON.parse(localStorage.getItem("dm_people"))
+let dm_favorites = JSON.parse(localStorage.getItem("dm_favorites")) 
+if(dm_favorites == null){
+    dm_favorites = new Array()
+}
 
 let about = localStorage.getItem("about");
 if (about){
     about = about.replaceAll("\n", "<br>")
 }
 
-if(id){
+function toggleFavorite(){
+    if(dm_favorites.includes(id)){
+        dm_favorites.splice(dm_favorites.indexOf(id), 1)
+    }
+    else{
+        dm_favorites.push(id)
+    }
+    localStorage.setItem("dm_favorites", JSON.stringify(dm_favorites))
+    _updateButtons()
+}
+
+function _updateButtons(){
     document.getElementById("buttons").innerHTML = `
-        <button onclick=${hasProfile() ? "goTo('dm.html')" : "goTo('reg.html')"}>Написать</button>
-        <button onclick="goTo('reg.html')">Сохранить в избранное</button>
-`
+        <button onclick=${hasProfile() ? "registerDM()" : "redirect('reg.html')"}>${dm_people.includes(id) ? "Перейти в ЛС" : "Написать"}</button>` +
+    `<button onclick=${hasProfile() ? "toggleFavorite()" : "redirect('reg.html')"}>${dm_favorites.includes(id) ? "Удалить из избранного" : "Сохранить в избранное"}</button>`
+}
+
+if(id){
+    _updateButtons()
+}
+
+function registerDM(){
+    if(!dm_people.includes(id)){
+        dm_people.push(id)
+        console.log("DM" + dm_people)
+        localStorage.setItem("dm_people", JSON.stringify(dm_people))
+    }
+    redirect(`dm.html?g=${id}`)
 }
 
 loadPhoto();
@@ -68,9 +96,4 @@ function loadPhoto() {
             document.getElementById("image").src = photoData;
         }
     }
-}
-
-function goTo(path) {
-
-    window.location.href = path;
 }
