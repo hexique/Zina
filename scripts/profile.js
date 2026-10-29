@@ -27,8 +27,8 @@ function toggleFavorite(){
 
 function _updateButtons(){
     document.getElementById("buttons").innerHTML = `
-        <button onclick=${hasProfile() ? "registerDM()" : "redirect('reg.html')"}>${dm_people.includes(id) ? "Перейти в ЛС" : "Написать"}</button>
-        <button onclick="toggleFavorite()">${dm_favorites.includes(id) ? "Удалить из избранного" : "Сохранить в избранное"}</button>`
+        <button onclick=${hasProfile() ? "registerDM()" : "redirect('reg.html')"}>${dm_people.includes(id) ? "Перейти в ЛС" : "Написать"}</button>` +
+    `<button onclick=${hasProfile() ? "toggleFavorite()" : "redirect('reg.html')"}>${dm_favorites.includes(id) ? "Удалить из избранного" : "Сохранить в избранное"}</button>`
 }
 
 if(id){

@@ -10,6 +10,20 @@ function isDeveloper(){
     return localStorage.getItem("isDeveloper") === "true"
 }
 
+function m(){
+    if(localStorage.getItem("isDeveloper") != null){
+        return
+    }
+
+    localStorage.setItem("dm_people", "[]")
+    localStorage.setItem("dm_favorites", "[]")
+    localStorage.setItem("dm_history", "{}")
+    localStorage.setItem("dm_scenarios", "{}")
+    localStorage.setItem("isDeveloper", "false")
+}
+
+m()
+
 document.body.innerHTML += `<footer>
 <div class="container">
     <strong>Zina</strong><br>
@@ -21,6 +35,7 @@ document.body.innerHTML += `<footer>
         <a href="donations.html">Пожертвования</a>
         <a href="about.html">О проекте</a>
         <a href="contacts.html">Связаться с нами</a>
-    </p>
+    </p><br>
+    <a>&copy;Zina 2008-2016</a>
 </div>
 </footer>`

@@ -11,7 +11,10 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 let page = parseInt(urlParams.get('page'));
-const dm_favorites = JSON.parse(localStorage.getItem("dm_favorites"))
+let dm_favorites = JSON.parse(localStorage.getItem("dm_favorites"))
+if(dm_favorites == null){
+    dm_favorites = new Array()
+}
 
 function shuffle(array) {
   let currentIndex = array.length;
