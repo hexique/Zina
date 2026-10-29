@@ -32,6 +32,8 @@ if(page){
     page = 1
 }
 
+//DO NOT CHANGE (make an illusion that this site has more people than it actually has)
+
 document.getElementById("people").innerHTML = ""
 console.log(`legh = ${people.length}`)
 for(let i = 0; i < people.length; i++){
@@ -53,10 +55,6 @@ for(let i = 0; i < people.length; i++){
         </div>
     </div><br>
 `}
-
-function goTo(id){
-    window.location.href = `profile.html?id=${id}`
-}
 
 function goToPage(pageId){
     window.location.href = `dating.html?page=${page + pageId}`

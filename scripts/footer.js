@@ -6,6 +6,9 @@ function redirect(url){
     window.location.href = url
 }
 
+function isDeveloper(){
+    return localStorage.getItem("isDeveloper") === "true"
+}
 
 document.body.innerHTML += `<footer>
 <div class="container">

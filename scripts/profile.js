@@ -12,8 +12,8 @@ if (about){
 
 if(id){
     document.getElementById("buttons").innerHTML = `
-        <button onclick=${hasProfile() ? "registerDM()" : "goTo('reg.html')"}>${dm_people.includes(id) ? "Перейти в ЛС" : "Написать"}</button>
-        <button onclick="goTo('reg.html')">Сохранить в избранное</button>
+        <button onclick=${hasProfile() ? "registerDM()" : "redirect('reg.html')"}>${dm_people.includes(id) ? "Перейти в ЛС" : "Написать"}</button>
+        <button onclick="redirect('reg.html')">Сохранить в избранное</button>
 `
 }
 
@@ -23,7 +23,7 @@ function registerDM(){
         console.log("DM" + dm_people)
         localStorage.setItem("dm_people", JSON.stringify(dm_people))
     }
-    goTo(`dm.html?g=${id}`)
+    redirect(`dm.html?g=${id}`)
 }
 
 loadPhoto();
@@ -78,9 +78,4 @@ function loadPhoto() {
             document.getElementById("image").src = photoData;
         }
     }
-}
-
-function goTo(path) {
-
-    window.location.href = path;
 }
