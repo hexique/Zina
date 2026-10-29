@@ -48,7 +48,7 @@ for(let i = 0; i < people.length; i++){
         </div>
         <div class="person-info">
             <div>
-                <h3>${people[i]["username"].split(" ")[1]}</h3>
+                <h3>${people[i]["username"].split(" ").slice(1).join(" ")}</h3>
                 <strong>${people[i]["age"]} · ${people[i]["city"]} · ${people[i]["gender"]}</strong>
                 <p>${people[i]["about"]}</p>
             </div>
