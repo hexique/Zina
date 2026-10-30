@@ -36,9 +36,8 @@ function _updateButtons(){
                 <button onclick="redirect('reg.html')">Изменить данные</button>`
 }
 
-if(id){
-    _updateButtons()
-}
+_updateButtons()
+
 
 function registerDM(){
     if(!dm_people.includes(id)){

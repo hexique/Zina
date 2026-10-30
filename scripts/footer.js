@@ -35,7 +35,11 @@ document.body.innerHTML += `<footer>
         <a href="donations.html">Пожертвования</a>
         <a href="about.html">О проекте</a>
         <a href="contacts.html">Связаться с нами</a>
+    </p>
+    <p>
+        <a style="color: hsl(0, 0%, 60%)" href="legal.html">Пользовательское соглашение</a>
+        <a style="color: hsl(0, 0%, 60%)" href="legal.html#privacy">Политика конфиденциальности</a><br>
     </p><br>
-    <a>&copy;Zina 2008-2016</a>
+    <p style="text-align: center; color: hsl(0, 0%, 50%)">&copy;Zina 2008-2026<br>Все права защищены</p>
 </div>
 </footer>`
