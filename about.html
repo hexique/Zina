@@ -13,20 +13,38 @@
 
     <div class="main-content">
         <div class="container">
-            <h1>О проекте</h1>
-            <p>Мне лень писать чё-то нормальное держите илью</p><br>
-            <img src="img/pilya.jpg"><br>
+            <h1>О прокте</h1>
+            <p><strong>Zina</strong> — площадка для знакомств, которая работает с 2008 года. Здесь ищут друзей, любовь и серьезные отношения, а не просто просматривают анкеты.</p><br>
+            <p>За это время сайт вырос в одно из самых больших сообществ Рунета. На Zina — миллионы анкет из России и стран СНГ, и за каждой стоит реальный человек, который хочет познакомиться и найти своих людей.</p><br>
+            <strong><p>Для чего мы это делаем</p></strong><br>
+            <p>Нам важно, чтобы знакомство начиналось с интереса и доверия, а не с бесконечного листания. Поэтому Zina помогает не теряться в анкетах, а находить тех, с кем действительно есть о чем поговорить.</p><br>
+            <strong><p>На чем держится Zina</p></strong><br>
+            <ul>
+                <li>Опыт. С 2008 года мы видели разные этапы знакомств в интернете и научились отличать рабочее от лишнего. Ваша личная информация и желание общаться — не товар для спама.</li>
+                <li>Реальные люди. На сайте много анкет, но мы следим, чтобы за ними оставались живые участники, а не пустые профили и боты.</li>
+                <li>Алгоритмы учитывают ваши интересы и предпочтения, чтобы рекомендации были ближе к тому, что вы ищете.</li>
+                <li>Модерация. Мы круглосуточно следим за порядком: убираем спам, реагируем на жалобы и стараемся, чтобы общение оставалось комфортным.</li>
+            </ul><br>
+            <p>Zina не обещает, что все сложится с первого сообщения. Но здесь для этого есть все: люди, инструменты и место, где вашей истории рады.</p><br>
 
             <div id="devmode" hidden>
                 <button onclick="clearCookies()">Очистить всё</button>
-
-                <button onclick="fastAccount()">Создать аккаунт "Иван"</button>
-                <button class="red-btn" onclick="setDevMode(false)">Выключить режим разработчика</button>
+                <button class="red-btn" onclick="setDevMode(false)">Выключить режим разработчика</button><br><br>
+                <p>человекочинитель <b>ЭТО НЕЛЬЗЯ ОТМЕНИТЬ ЛИШЬ ЧАСТИЧНО, ПОЛЬЗУЙТЕСЬ С УМОМ</b></p>
+                <p>ID человека [0-100]</p>
+                <input id="pts-id" type="text" placeholder="0"><br>
+                <textarea id="pts-tweaker"></textarea><br>
+                <img id="pts-preview" width="200"><br>
+                <button onclick="pts_load()">Загрузить</button>
+                <button onclick="pts_save()">Сохранить</button>
+                <button class='red-btn' onclick="if(!confirm('.')){return;} localStorage.removeItem('pts_people')">Обратить <b>ВСЕ</b> изменения вспять</button>
+                <button class="red-btn" onclick="if(!confirm('опасно нажимать!!!')){return;} pts_ilya()">Ильи - и нет им конца</button>
             </div>
         </div>
     </div>
 
     <script src="scripts/footer.js"></script>
+    <script src="scripts/people.js"></script>
 
     <script src="scripts/about.js"></script>
     <script src="scripts/header.js"></script>

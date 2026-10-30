@@ -283,6 +283,7 @@ function dm_setmessages(id){
 function closedm(){
     dm_list.hidden = false;
     dm_view.hidden = true;
+    populatedm()
 }
 
 function deletedm(){
@@ -313,10 +314,12 @@ function populatedm(){
         const person = people[parseInt(dm_people_list[i])];
         const history = dm_history[dm_people_list[i]]
 
+        console.log(history)
+
         dm_list.innerHTML += `<div class="person-dm-listing" onclick="opendm(this.id)" id="${person.id}">
                 <img src="img/persons/${person.photo}.jpg" width="60" height="60">
                 <a>${person.username}</a>
                 <p>${history != null ? history[history.length-1] : ""}</p>
-            </div>` //history is not showing up for some reason?
+            </div>`
     }
 }

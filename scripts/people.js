@@ -1,6 +1,5 @@
-
-
-let people = [
+const pts_people = localStorage.getItem("pts_people")
+let people = pts_people != null ? JSON.parse(pts_people) : [
     {
         "username": "Бакиева Анжелика",
         "city": "Казань",

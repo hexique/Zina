@@ -39,9 +39,20 @@ function save(){
     if(!scenarios){
         scenarios = new Object()
     }
-    scenarios[idbox.value] = {"messages": scbox.value.split("\n"), "index": 0}
+    scenarios[idbox.value] = {"messages": scbox.value.split("\n"), "index": frbox.checked ? 1 : 0}
 
     localStorage.setItem("dm_scenarios", JSON.stringify(scenarios))
+    if(frbox.checked){
+        let people = JSON.parse(localStorage.getItem("dm_people"))
+        if(!people.includes(idbox.value)){
+            people.push(idbox.value)
+        }
+        localStorage.setItem("dm_people", JSON.stringify(people))
+        
+        let history = JSON.parse(localStorage.getItem("dm_history"))
+        history[idbox.value] = [scenarios[idbox.value].messages[0]]
+        localStorage.setItem("dm_history", JSON.stringify(history))
+    }
 }
 
 const idbox = document.getElementById("id")
