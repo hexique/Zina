@@ -253,6 +253,7 @@ function opendm(id){
     dm_view_template.innerHTML = `${people[id].username}` //<img src="img/persons/${id}.jpg" width="40">
 
     dm_setmessages(id)
+    window.scroll({"top": -10000, "behavior": "smooth"})
 }
 
 function dm_setmessages(id){
@@ -303,11 +304,11 @@ function deletedm(){
 
 function populatedm(){
     if(dm_people_list == null || dm_people_list.length == 0){
-        dm_list.innerHTML = "<i>Здесь пустовато. Попробуйте с кем-нибудь <a href=\"dating.html\">познакомиться</a>!</i>"
+        dm_list.innerHTML = `<h1 style="text-align: center; margin-bottom: 15px; margin-top: -10px; color: #3366cc">Личные сообщения</h1><i>Здесь пустовато. Попробуйте с кем-нибудь <a href=\"dating.html\">познакомиться</a>!</i>`
         return
     }
     console.log(dm_people_list)
-    dm_list.innerHTML = ""
+    dm_list.innerHTML = `<h1 style="text-align: center; margin-bottom: 15px; margin-top: -10px; color: #3366cc">Личные сообщения</h1>`
 
     for(let i=0; i < dm_people_list.length; i++){
         console.log(dm_people_list[i])
@@ -316,10 +317,14 @@ function populatedm(){
 
         console.log(history)
 
-        dm_list.innerHTML += `<div class="person-dm-listing" onclick="opendm(this.id)" id="${person.id}">
-                <img src="img/persons/${person.photo}.jpg" width="60" height="60">
-                <a>${person.username}</a>
-                <p>${history != null ? history[history.length-1] : ""}</p>
-            </div>`
+        dm_list.innerHTML += `<div class="person-card" onclick="opendm(this.id)" id=${person.id}>
+            <div class="person-avatar">
+                <img src="img/persons/${person.photo}.jpg" width="200">
+            </div>
+            <div class="person-info">
+                <h3>${people[i]["username"].split(" ").slice(1).join(" ")}</h3>
+                <span style="font-size: x-large; font-weight: 550">${history != null ? history[history.length-1] : ""}</span>
+            </div>
+        </div>`
     }
 }
