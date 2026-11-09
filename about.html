@@ -39,12 +39,20 @@
                 <button onclick="pts_save()">Сохранить</button>
                 <button class='red-btn' onclick="if(!confirm('.')){return;} localStorage.removeItem('pts_people')">Обратить <b>ВСЕ</b> изменения вспять</button>
                 <button class="red-btn" onclick="if(!confirm('опасно нажимать!!!')){return;} pts_ilya()">Ильи - и нет им конца</button>
+
+                <br><br>
+                <p>РЕКЛАМА</p>
+                <input id="ad-id" type="text" placeholder="ID рекламы"><br>
+                <button onclick="_show_ad()">показать</button>
             </div>
         </div>
     </div>
+    
+    
 
-    <script src="scripts/footer.js"></script>
     <script src="scripts/people.js"></script>
+    <script src="scripts/ads.js"></script>
+    <script src="scripts/footer.js"></script>
 
     <script src="scripts/about.js"></script>
     <script src="scripts/header.js"></script>

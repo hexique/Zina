@@ -15,6 +15,10 @@ window.addEventListener("keydown", (event) => {
     }
 })
 
+if(isDeveloper()){
+    forbid_ads = true;
+}
+
 
 function setDevMode(value){
     localStorage.setItem("isDeveloper", value)
@@ -66,4 +70,8 @@ function pts_ilya(){
         people[i] = {"username":"Перешивов Илья Валерьянович","city":"Казань","about":"Депутат <b>народной</b> госдумы, 17 год , ищу друга","photo":"../pilya","gender":"Мужчина","age":17,"id":i}
     }
     localStorage.setItem("pts_people", JSON.stringify(people))
+}
+
+function _show_ad(){
+    show_add(document.querySelector("#ad-id").value)
 }

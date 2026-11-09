@@ -465,3 +465,35 @@ select.error-field {
     box-shadow: 0 3px 8px rgba(0,0,0,0.4);
     transform: translateY(-1px);
 }
+
+
+.ad{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.ad .close-btn{
+    aspect-ratio: 1;
+    border-radius: 50%;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 15px;
+}
+
+.ad img{
+    position: relative;
+    left: 5px;
+    max-height: 100px;
+}
+
+.ad-container{
+    background-color: whitesmoke;
+    padding: 5px 5px;
+    min-width: 400px;
+    min-height: 125px;
+    border-radius: 8px;
+}
