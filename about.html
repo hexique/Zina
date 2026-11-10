@@ -29,7 +29,10 @@
 
             <div id="devmode" hidden>
                 <button onclick="clearCookies()">Очистить всё</button>
-                <button class="red-btn" onclick="setDevMode(false)">Выключить режим разработчика</button><br><br>
+                <button class="red-btn" onclick="setDevMode(false)">Выключить режим разработчика</button><br>
+                <input type="checkbox" onclick="localStorage.setItem('showNSads', this.checked)" id="unsf-ads">Переключить показ "небезопасной" рекламы
+                <br>
+                <br>
                 <p>человекочинитель <b>ЭТО НЕЛЬЗЯ ОТМЕНИТЬ ЛИШЬ ЧАСТИЧНО, ПОЛЬЗУЙТЕСЬ С УМОМ</b></p>
                 <p>ID человека [0-100]</p>
                 <input id="pts-id" type="text" placeholder="0"><br>

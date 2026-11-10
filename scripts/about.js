@@ -19,6 +19,8 @@ if(isDeveloper()){
     forbid_ads = true;
 }
 
+document.querySelector("#unsf-ads").checked = localStorage.getItem("showNSads") == "true"
+
 
 function setDevMode(value){
     localStorage.setItem("isDeveloper", value)

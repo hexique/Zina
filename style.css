@@ -471,6 +471,7 @@ select.error-field {
     position: fixed;
     right: 20px;
     bottom: 20px;
+    z-index: 9999;
 }
 
 .ad .close-btn{
@@ -482,18 +483,20 @@ select.error-field {
     align-items: center;
     position: fixed;
     right: 15px;
+    z-index: 999;
 }
 
 .ad img{
     position: relative;
     left: 5px;
-    max-height: 100px;
+    height: auto
 }
 
 .ad-container{
-    background-color: whitesmoke;
+    background: whitesmoke;
+    border: 1px black solid;
     padding: 5px 5px;
-    min-width: 400px;
+    min-width: 250px;
     min-height: 125px;
     border-radius: 8px;
 }
