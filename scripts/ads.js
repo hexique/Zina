@@ -6,6 +6,9 @@ let forbid_ads = false;
 
 let show_unsafe_ads = localStorage.getItem("showNSads") == "true";
 
+
+forbid_ads = localStorage.getItem("DISABLE_ADS") == "true"
+
 const unsafe_ads = [3, 5, 6, 11, 12]
 const DELAY = 5000
 
